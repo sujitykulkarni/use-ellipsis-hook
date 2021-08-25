@@ -5,6 +5,12 @@
   "main": "build/index.js",
   "author": "Sujit Kulkarni",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sujitykulkarni/use-ellipsis-hook.git"
+  },
+  "homepage": "https://github.com/sujitykulkarni/use-ellipsis-hook#readme",
+  "keywords": ["react", "text ellipsis", "responsive ellipsis"],
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
