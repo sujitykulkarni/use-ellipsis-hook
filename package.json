@@ -2,7 +2,9 @@
   "name": "use-ellipsis-hook",
   "version": "1.0.0",
   "description": "Responsive text ellipsizing hook for React",
-  "main": "build/index.js",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/index.d.ts",
   "author": "Sujit Kulkarni",
   "license": "MIT",
   "repository": {
@@ -10,7 +12,11 @@
     "url": "https://github.com/sujitykulkarni/use-ellipsis-hook.git"
   },
   "homepage": "https://github.com/sujitykulkarni/use-ellipsis-hook#readme",
-  "keywords": ["react", "text ellipsis", "responsive ellipsis"],
+  "keywords": [
+    "react",
+    "text ellipsis",
+    "responsive ellipsis"
+  ],
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -39,8 +45,9 @@
     "webpack-cli": "^4.8.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
-    "watch": "webpack --watch --mode development"
+    "build": "tsc",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir build/cjs"
   },
   "files": [
     "build"
