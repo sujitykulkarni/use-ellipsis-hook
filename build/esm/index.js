@@ -23,9 +23,13 @@ var useScreenSize = function () {
     });
     return screenSizeRef.current;
 };
-var computedThreshold = function (screenWidth, responsivenessFactor) {
-    return Math.floor(screenWidth / responsivenessFactor);
-};
+var computedThreshold = function (screenWidth, responsivenessFactor) { return Math.floor(screenWidth / responsivenessFactor); };
+/**
+ * This hook calculates the screen width, and returns a number that'll be
+ * the width of your text, beyond which, rest of the content will be truncated.
+ * @param config
+ * @returns
+ */
 var useEllipsisThreshold = function (config) {
     var screenWidth = useScreenSize().width;
     var responsivenessFactor = config.responsivenessFactor, lowerLimit = config.lowerLimit;
@@ -33,6 +37,6 @@ var useEllipsisThreshold = function (config) {
     useEffect(function () {
         ellipsisThreshold.current = computedThreshold(screenWidth, responsivenessFactor);
     }, [screenWidth]);
-    return Math.min(lowerLimit, ellipsisThreshold.current);
+    return Math.max(lowerLimit, ellipsisThreshold.current);
 };
 export default useEllipsisThreshold;
