@@ -55,3 +55,8 @@ Yarn
 
 #### License
 MIT
+
+---
+
+### Contribution
+Feel free to log issues and raise PRs in order to make this package stable and relevant.
